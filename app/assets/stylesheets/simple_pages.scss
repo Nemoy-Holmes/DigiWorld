@@ -1,3 +1,48 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+    box-sizing: border-box;
+}
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+h1 {
+	color: blue;
+	font-weight: bolder;
+}
+.index-body h1 {
+	color: red;
+}
+.index-body p{
+	color: white;
+}
+//all the page backgrounds
+.index-body {
+ background-image:url(img1.jpg);
+ height: 100%;
+ background-size: cover;
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-position: center;
+}
+
+.contact-body{
+ background-image: url(img2.jpg);
+ height: 100%;
+ background-size: cover;
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-position: center;
+}
+
+.about-body
+ {
+	background-image: url(img3.jpg);
+	height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+}
