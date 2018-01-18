@@ -53,7 +53,7 @@ group :development do
 end
 group :production do
   # PostgreSQL
-  gem 'pg'
+  gem 'pg', '~> 0.20'
 end  
 group :development, :test do
   gem 'sqlite3'
