@@ -7,9 +7,9 @@
   <div class= "row">
     <% @products.each do |product| %>
     <%= render partial: "product", locals: {product: product} %>
-    <% end %>
+    <%end%>
     <div class = "col-sm-12 col-md-4">
-      <p>Name: <%= product.name%></p>
+      <p>Name: <%= link_to product.name, product%></p>
       <%= image_tag(product.image_url, class: "img-responsive") %>
       <p>Description: <%= product.description%></p>
       <p>Colour: <%= product.colour%></p>
