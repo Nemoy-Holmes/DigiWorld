@@ -2,9 +2,12 @@
   <div class="container">
 <p id="notice"><%= notice %></p>
 
-
-<%= image_tag(@product.image_url, class: "img-responsive obj-image") %>
-<div class="info">
+<div class="row">
+	<div class="col-sm-10 col-md-6">
+<%= image_tag(@product.image_url, class: "img-responsive ") %>
+</div>
+<div class="col-sm-10 col-md-4">
+	<div class="info">
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -26,5 +29,7 @@
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 
+</div>
+</div>
 </div>
 </div>
