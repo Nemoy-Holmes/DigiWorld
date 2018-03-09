@@ -1,3 +1,22 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//stying for show.html.erb for
+showing products 
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+.obj-image {
+	width: 70%;
+	float: left;
+}
+
+.info {
+	float: right;
+	padding-top: 2.65em; 
+
+}
