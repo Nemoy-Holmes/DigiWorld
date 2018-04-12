@@ -24,14 +24,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">DigiWorld</a>
+      <h2 class="navbar-brand">
+        <%= link_to("Digiworld",simple_pages_index_path)%>
+      </h2>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">contact <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">about us</a></li>
+        
+        <li><%= link_to("about",simple_pages_about_path)%>
+        </li>
+        <li>
+          
+            <%= link_to("contact",simple_pages_contact_path)%>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
           <ul class="dropdown-menu">
