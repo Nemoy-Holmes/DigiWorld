@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
+  resources :users
   resources :products
   resources :object_names
   get 'simple_pages/about'
