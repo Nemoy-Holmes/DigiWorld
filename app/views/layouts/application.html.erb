@@ -79,9 +79,8 @@
 </nav>
 <% if notice %>
 <p id="notice" class="alert alert-info" role = "alert"><%= notice%></p>
-<% end %>
-<%if alert %>
-<p class="alert alert-info" role = "alert"><%=alert %></p>
+<%elsif alert %>
+<p class="alert alert-info"><%=alert %></p>
 <% end %>
     <%= yield %>
     <footer>
