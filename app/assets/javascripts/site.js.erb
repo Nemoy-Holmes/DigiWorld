@@ -1,17 +1,10 @@
 $(document).on('turbolinks:load', function(){
-	$('.rating').raty({
-		startHalf: '<%= asset_path 'star-half.png'%>',
-		starOff: '<%= asset_path 'star-off.png'%>',
-		starOn: '<%= asset_path 'star-on.png'%>',
-		scoreName: 'comment[rating]'
+	$('.rating').raty({path:'/assets', scoreName: 'comment[rating]'
 	});
 
 
-$('rated').raty({
-	startHalf: '<%= asset_path 'star-half.png'%>',
-	starOff: '<%= asset_path 'starOff.png'%>',
-	starOn:'<%= asset_path 'star-on.png'%>',
-	readOnly: true,
+$('rated').raty({ path: '/assets'
+readOnly: true,
 	score: function(){
 		return $(this).attr('data-score');
 	}
