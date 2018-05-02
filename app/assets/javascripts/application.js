@@ -15,14 +15,15 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
 $(document).on('turbolinks:load', function(){
-	setTimeout(function(){
-		$(".alert").fadeOut("slow",function(){
-			$(this).remove();
-		})
-	}, 1500);
-	$(".alert").click(function(e){
-		e.preventDefault();
-		$(".alert").remove();
-	});
+    setTimeout(function(){
+        $(".alert").fadeOut("slow",function(){
+            $(this).remove();
+        })
+    }, 1500);
+    $(".alert").click(function(e){
+        e.preventDefault();
+        $(".alert").remove();
+    });
 });
