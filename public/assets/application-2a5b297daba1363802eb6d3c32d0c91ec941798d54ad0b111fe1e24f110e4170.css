@@ -1,0 +1,238 @@
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: "raty";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/raty.eot");
+  src: url("fonts/raty.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/raty.svg#raty") format("svg");
+  src: url("fonts/raty.ttf") format("truetype");
+  src: url("fonts/raty.woff") format("woff");
+}
+
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "raty";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.cancel-on-png:before {
+  content: "\e600";
+}
+
+.cancel-off-png:before {
+  content: "\e601";
+}
+
+.star-on-png:before {
+  content: "\f005";
+}
+
+.star-off-png:before {
+  content: "\f006";
+}
+
+.star-half-png:before {
+  content: "\f123";
+}
+/* line 7, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/products.scss */
+showing products
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* line 15, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/products.scss */
+.info {
+  padding-top: 2.65em;
+}
+/* line 1, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/* line 4, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 8, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* line 12, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+h1 {
+  color: blue;
+  font-weight: bolder;
+}
+
+/* line 16, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+.index-body h1 {
+  color: red;
+}
+
+/* line 19, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+.index-body p {
+  color: white;
+}
+
+/* line 23, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+.index-body {
+  background-image: url(img1.jpg);
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 32, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+.carousel-text {
+  top: 50%;
+  bottom: auto;
+  font-size: 4em;
+  line-height: 1.25em;
+  text-shadow: 1px 1px 2px, 0 0 25px black, 0 0 5px;
+}
+
+/* line 41, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+.contact-body {
+  background-image: url(img2.jpg);
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 50, /media/djones/DA9247B7924796C3/c.f/Digiworld/app/assets/stylesheets/simple_pages.scss */
+.about-body {
+  background-image: url(img3.jpg);
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+ */
+
+
+footer {
+	clear: both;
+	float: left;
+	padding-top: 6.25em;
+}
