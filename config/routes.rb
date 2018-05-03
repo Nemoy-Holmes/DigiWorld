@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
   resources :users
-  resources :object_names
   
   resources :products do
   resources :comments
