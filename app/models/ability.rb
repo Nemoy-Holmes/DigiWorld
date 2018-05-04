@@ -5,6 +5,8 @@ class Ability
     # Define abilities for the passed in user here. 
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
    user ||= User.new #guest (not loggeg in)
+   can :manage, User, id: user.id
+
    if user.admin?
     can :manage, :all
   else
