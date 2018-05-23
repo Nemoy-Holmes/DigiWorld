@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
   load_and_authorize_resource
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_url, alert: exception.message
+  end
   respond_to :json, :html
 
   # GET /products
@@ -11,10 +14,12 @@ class ProductsController < ApplicationController
 def index
   if params[:q]
     search_term = params[:q]
-    @products = Product.search(search_term)
+    @products = Product.search(search_term).paginate(:page => params[:page], :per_page =>9)
+    
   else
-    @products = Product.all
+    @products = Product.all.paginate(:page => params[:page], :per_page =>9)
   end
+
 end
   # GET /products/1
   # GET /products/1.json
