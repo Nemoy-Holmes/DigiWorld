@@ -12,6 +12,10 @@
       <div class="info">
         <strong>Name:</strong>
         <%= @product.name %>
+        
+        <%= form_with(url: '/payments/create') do |form| %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
 
         <strong>Description:</strong>
         <%= @product.description %>
