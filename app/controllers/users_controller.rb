@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, :set_user, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-  
+  byebug
   rescue_from CanCan::AccessDenied do |exception|
   redirect_to main_app.root_url, alert: exception.message
 end
