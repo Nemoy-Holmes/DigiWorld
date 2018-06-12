@@ -3,7 +3,7 @@ class Product < ApplicationRecord
 	 has_many :comments 
 
 	 validates :name, presence: true	 
-	 byebug
+
 def self.search(search_term)
  if Rails.env.production?
    Product.where("name ilike ?", "%#{search_term}%")
