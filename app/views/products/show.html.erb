@@ -1,43 +1,44 @@
      
 
 <div class="container">
-  <p id="notice"><%= notice %></p>
+  <%cache @product do%>
+      <p id="notice"><%= notice %></p>
 
-  <div class="row">
-    <div class="col-sm-10 col-md-6">
-      <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image:@product.image_url) %>
-    </div>
+      <div class="row">
+        <div class="col-sm-10 col-md-6">
+          <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image:@product.image_url) %>
+        </div>
 
-    <div class="col-sm-10 col-md-4">
-      <div class="info">
-        <strong>Name:</strong>
-        <%= @product.name %>
-        
-        
-        <strong>Description:</strong>
-        <%= @product.description %>
+        <div class="col-sm-10 col-md-4">
+          <div class="info">
+            <strong>Name:</strong>
+            <%= @product.name %>
+            
+            
+            <strong>Description:</strong>
+            <%= @product.description %>
 
-        <strong>Colour</strong>
-        <%= @product.colour %>
+            <strong>Colour</strong>
+            <%= @product.colour %>
 
-        <strong>Price</strong>
-        <%= @product.price %>
+            <strong>Price</strong>
+            <%= @product.price %>
 
-        <%= @product.highest_rating_comment %>
+            <%= @product.highest_rating_comment %>
 
-        <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div></p>
-        <%= form_with(url: '/payments/create') do |form| %>
-          <%= hidden_field_tag(:product_id, @product.id)%>
-          <%= render partial: "shared/stripe_checkout_button" %>
-        <% end %>
+            <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div></p>
+            <%= form_with(url: '/payments/create') do |form| %>
+              <%= hidden_field_tag(:product_id, @product.id)%>
+              <%= render partial: "shared/stripe_checkout_button" %>
+            <% end %>
 
 
-        <%= render "new_comment"%>
-        <%= render "comments"%>
-        <%=  will_paginate @comments %>
-        <%= link_to 'Back', products_path %>
-
+            <%= render "new_comment"%>
+            <%= render "comments"%>
+            <%=  will_paginate @comments %>
+            <%= link_to 'Back', products_path %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+  <%end%>
 </div>

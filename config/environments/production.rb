@@ -29,8 +29,8 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.serve_static_assets = true
-  config.assets.compile = true
-  DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+  config.assets.compile = false
+  
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
