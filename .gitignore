@@ -20,6 +20,4 @@
 /node_modules
 /yarn-error.log
 
-/config/initializers/redis.rb
-/config/initializers/stripe.rb
 .byebug_history
