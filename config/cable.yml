@@ -5,6 +5,6 @@ test:
   adapter: async
 
 production:
-  adapter: redis
-  url: redis://localhost:6379/1
+  adapter: postgresql
+  url: postgres://bilhdjbyvjyhvf:291b1444162b113326a908e1c7f5952f76642e94e57ebfe39fea86baa46ba382@ec2-23-23-130-158.compute-1.amazonaws.com:5432/dacpqlm63vb08
   channel_prefix: Digiworld_production
