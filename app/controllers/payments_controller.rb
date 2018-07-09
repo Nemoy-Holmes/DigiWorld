@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+  
   def create
     token = params[:stripeToken]
     @product = Product.find(params[:product_id])
@@ -9,7 +10,9 @@ class PaymentsController < ApplicationController
         amount: (@product.price*100).to_i,
         currency: "usd",
         source: token,
+        receipt_email: params[:stripeEmail],
         description: params[:stripeEmail]
+        
       )
 
       if charge.paid
@@ -18,9 +21,10 @@ class PaymentsController < ApplicationController
           user_id: @user.id,
           total: @product.price
         )
+        flash[:success] = "Your payment was processed successfully"
       end
 
-      flash[:success] = "Your payment was processed successfully"
+      
 
     rescue Stripe::CardError => e
       body = e.json_body
