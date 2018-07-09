@@ -7,10 +7,9 @@ class UserMailer < ApplicationMailer
 			to: "your-email@example.com",
 			subject:"A new contact form #{name}")
 	end
-	def thank_you
-		@name = params[:name]
-		@email = params[:email]
-		@message= params[:message]
-		UserMailer.contact(@email, @name, @message).deliver_now
+
+	def welcome(user)
+		mail(to: user.email, 
+			subject: "welcome to Digiworld")
 	end
 end
