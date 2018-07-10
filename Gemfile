@@ -71,3 +71,8 @@ gem 'stripe'
 gem "brakeman"
 gem "redis-rails"
 gem "newrelic_rpm"
+#for memcache
+gem "dalli"
+#for ruby apps on puma(and other multi-threaded server)
+gem "connection_pool"
+gem 'redis-rails'
