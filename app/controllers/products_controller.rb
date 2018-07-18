@@ -16,11 +16,12 @@ class ProductsController < ApplicationController
 def index
   if params[:q]
     search_term = params[:q]
-    @products = Product.search(search_term).paginate(:page => params[:page], :per_page =>9)
+    @products = Product.search(search_term)
   
   else
-    @products = Product.all.paginate(:page => params[:page], :per_page =>9)
+    @products = Product.all
   end
+  @products = @products.paginate(:page => params[:page], :per_page =>9)
 
 end
   # GET /products/1

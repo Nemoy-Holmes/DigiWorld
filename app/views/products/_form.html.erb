@@ -11,31 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
-  </div>
+  <div class= "row">
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :product_description %>
-  </div>
+    <div class= "col-sm-10 col-md-8">
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url, id: :product_image_url %>
-  </div>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :product_name, placeholder: "name", required: "true" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :colour %><br>
-    <%= form.text_field :colour %>
-  </div>
-  <div>
-    <%= form.label :price%><br>
-    <%= form.text_field :price%>
-  </div>
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_field :description, id: :product_description, placeholder: "description", required: "true" %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="field">
+        <%= form.label :image_url %>
+        <%= form.text_field :image_url, id: :product_image_url, placeholder: "image", required: "true" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :colour %><br>
+        <%= form.text_field :colour, placeholder: "color", required: "true" %>
+      </div>
+      <div>
+        <%= form.label :price%><br>
+        <%= form.text_field :price, placeholder: "price", required: "true" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
   </div>
+</div>
 <% end %>
