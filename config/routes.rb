@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :admins
   devise_for :users, controllers: {registration: "user_registration"}
+  
   resources :users
   
   resources :products do
