@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class= "container-fluid ">
+  <div class="jumbotron user-index-content">
+    
+    <h1>Users</h1>
 
-<h1>Users</h1>
+    <% @users.each do |user|%>
+      <div class= "users-info">
+        
+        <div class= "first-last-name">
+          <li><strong>First Name:</strong><%= user.first_name %></li>
+          <li><strong>Last Name:</strong><%= user.last_name %></li>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <div>
+          <strong>Email:</strong> <%= user.email%>
+        </div>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class= "users-show-edit-back">
+          <%= link_to 'Show', user %> |
+          <%= link_to 'Edit', edit_user_path(user) %> |
+          <%= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure?' } %>
+        </div>
+
+      </div>
     <% end %>
-  </tbody>
-</table>
+    
+    <div class= "user-index-back">
+      <%= link_to 'Back', products_path %>
+    </div>
+  
+  </div>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+</div>
