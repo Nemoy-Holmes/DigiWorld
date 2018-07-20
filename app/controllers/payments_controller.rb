@@ -5,7 +5,6 @@ class PaymentsController < ApplicationController
     redirect_to main_app.root_url, :alert => exception.message
   end 
   
-  require 'stripe'
   
   def create
     token = params[:stripeToken]
@@ -17,7 +16,6 @@ class PaymentsController < ApplicationController
         amount: (@product.price*100).to_i,
         currency: "usd",
         source: token,
-        description: @product.description,
         receipt_email: params[:stripeEmail],
         description: params[:stripeEmail]
         
