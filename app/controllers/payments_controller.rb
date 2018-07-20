@@ -1,4 +1,11 @@
 class PaymentsController < ApplicationController
+  before_action :authenticate_user!
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_url, :alert => exception.message
+  end 
+  
+  require 'stripe'
   
   def create
     token = params[:stripeToken]
@@ -10,6 +17,7 @@ class PaymentsController < ApplicationController
         amount: (@product.price*100).to_i,
         currency: "usd",
         source: token,
+        description: @product.description,
         receipt_email: params[:stripeEmail],
         description: params[:stripeEmail]
         
@@ -19,11 +27,10 @@ class PaymentsController < ApplicationController
         Order.create(
           product_id: @product.id,
           user_id: @user.id,
-          total: @product.price
-        )
-        flash[:success] = "Your payment was processed successfully"
+          total: @product.price.to_i
+          flash[:success] = "Your payment was processed successfully! #{@product.name}"
       end
-
+        )
       
 
     rescue Stripe::CardError => e
@@ -32,6 +39,6 @@ class PaymentsController < ApplicationController
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
     end
 
-    redirect_to product_path(@product)
+    redirect_to product_path(@product), notice: "#{@product.name} has been purchased successfully!"
   end
 end

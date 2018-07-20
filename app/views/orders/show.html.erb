@@ -1,7 +1,17 @@
 <div class="container">
   <h2>Order Information</h2>
+  <p>
   <strong>Order ID: </strong><%= @order.id %>
+  </p>
+  <br>
+  <%= image_tag(@order.product.image_url, class: "img-responsive")%>
+  <p>
   <strong>Product Name: </strong><%= @order.product.name %>
+  </p>
+  <p>
   <strong>Product Price: </strong><%= number_to_currency(@order.product.price.to_f) %>
+  </p>
+  <p>
   <strong>Total Price: </strong><%= number_to_currency(@order.total.to_f) %>
+  </p>
 </div>

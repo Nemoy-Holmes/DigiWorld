@@ -1,3 +1,40 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-fn,
+.user-ln {
+  background-color: #E6EFFA;
+}
+.user-index-content {
+    max-width: 60%;
+}
+
+.users-info {
+    text-align: center;
+    list-style: none;
+    color: black;
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+
+.first-last-name {
+    line-height: 30px;
+}
+
+.users-show-edit-back {
+    margin-top: 40px;
+}
+
+.user-index-back {
+    text-align: center;
+}
+
+.current-user-header {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.show-links {
+    text-align: center;
+}
+
