@@ -19,7 +19,7 @@ class PaymentsController < ApplicationController
         Order.create(
           product_id: @product.id,
           user_id: @user.id,
-          total: @product.price
+          total: @product.price.to_i
         )
         flash[:success] = "Your payment was processed successfully"
       end
