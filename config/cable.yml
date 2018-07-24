@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: postgresql
-  url: postgres://wvezltqwapqxuf:e63a8afa5d60dd49a683d344e2b157c1f7825145d2b18f4ea79d0bb8245304c9@ec2-174-129-192-200.compute-1.amazonaws.com:5432/d9ebl3403u1lq2
+  url: redis://h:p615f714c2f49948d320d297a62e993f92c992dcc7ef9490db192437864da7e9e@ec2-34-238-130-4.compute-1.amazonaws.com:19149
   channel_prefix: Digiworld_production
