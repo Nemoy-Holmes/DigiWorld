@@ -9,11 +9,12 @@ end
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
-  end
-  def index
+    if current_user.admin?
       @users = User.all
-	end
+    else
+      redirect_to main_app.root_url, notice: "access not allowed"
+    end
+  end
 
   # GET /users/1
   # GET /users/1.json

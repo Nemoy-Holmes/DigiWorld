@@ -15,74 +15,93 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <h2 class="navbar-brand">
-        <%= link_to("Digiworld",simple_pages_index_path)%>
-      </h2>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-        <li><%= link_to("about",simple_pages_about_path)%>
-        </li>
-        <li>
+        <div class="navbar-header">
           
-            <%= link_to("contact",simple_pages_contact_path)%>
-        </li>
-        <li>
-           <%= link_to("Products",products_path)%>
-        </li>
-      </ul>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <h2 class="navbar-brand">
+            <%= link_to("Digiworld",simple_pages_index_path)%>
+          </h2>
+        </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+        
+            <li>
+              <%= link_to("about",simple_pages_about_path)%>
+            </li>
+            
+            <li>
+              <%= link_to("contact",simple_pages_contact_path)%>
+            </li>
+        
+            <li>
+              <%= link_to("Products",products_path)%>
+            </li>
+            
+          </ul>
 
  
-      <%= form_with(url: products_path, method: 'get', local: true, class: "navbar-form navbar-left") do |form| %>
-  
-  <%= form.text_field(:q, id: 'q', value: params[:q], class: "form-control")%>
-  <%= form.submit 'Search' %>
-<% end %>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% if user_signed_in? %>
-              <li>
-                <%= link_to("Orders",orders_path)%>
-              </li>
-              <li>
-                <%= link_to("Users", users_path%>
-              </li>
-              <li>
-                <%= link_to('logout', destroy_user_session_path, method: :delete)%>
-              </li>
+              <%= form_with(url: products_path, method: 'get', local: true, class: "navbar-form navbar-left") do |form| %>
+              <%= form.text_field(:q, id: 'q', value: params[:q], class: "form-control")%>
+              <%= form.submit 'Search' %>
+              <% end %>
 
-            <% else %>
-              <li>
-                <%= link_to('login', new_user_session_path)%>
-              </li>  
-            <%end%>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">Link</a>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <% if user_signed_in? %>
+                  <li>
+                    <%= link_to("Orders",orders_path)%>
+                  </li>
+                    
+                  <li>
+                    <%if current_user.admin?%>
+                      <%= link_to("Users", users_path)%>
+                    <% else %>
+                      <%= link_to('Edit Profile', edit_user_path(current_user)) %>
+                    <%end%>
+                    
+                  </li>
+              
+                  <li>
+                    <%= link_to('logout', destroy_user_session_path, method: :delete)%>
+                  </li>
+
+                <% else %>
+                  
+                  <li>
+                    <%= link_to('login', new_user_session_path)%>
+                  </li>  
+                <%end%>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<% if notice %>
-<p id="notice" class="alert alert-info" role = "alert"><%= notice%></p>
-<%elsif alert %>
-<p class="alert alert-info"><%=alert %></p>
-<% end %>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    <% if notice %>
+      <p id="notice" class="alert alert-info" role = "alert"><%= notice%></p>
+    <%elsif alert %>
+      <p class="alert alert-info"><%=alert %></p>
+    <% end %>
+    
     <%= yield %>
     <footer>
     	&copy; 2018 DigiWorld
