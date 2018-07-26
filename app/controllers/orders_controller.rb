@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
 	end 
 
 	def index
-		@orders = Order.includes(:product, :user).where(user_id: current_user.id).all
+		if current_user.admin?
+			@orders = Order.includes(:product, :user).all
+		else
+			@orders = Order.includes(:product, :user).where(user_id: current_user.id).all
+		end
 	end
 
 	def show

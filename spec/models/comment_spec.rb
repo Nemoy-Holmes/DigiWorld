@@ -21,7 +21,7 @@ require 'rails_helper'
 
       it "has a numerical rating" do
         expect(Comment.new(rating: 1, user: @user, body: "Awful bike!", product: @product)).to be_valid
-        expect(Comment.new(rating: "x", user: @user , body:"Awful bike!", product: @product)).not_to be_valid
+        expect(Comment.new(rating: nil, user: @user , body:"Awful bike!", product: @product)).not_to be_valid
       end
 
       it "has a product" do

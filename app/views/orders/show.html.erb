@@ -8,6 +8,12 @@
   <p>
   <strong>Product Name: </strong><%= @order.product.name %>
   </p>
+   <p>
+  <strong> Firstname: </strong><%=  @order.user.first_name %>
+  </p>
+  <p>
+  <strong> Lastname: </strong><%=  @order.user.last_name %>
+  </p>
   <p>
   <strong>Product Price: </strong><%= number_to_currency(@order.product.price.to_f) %>
   </p>

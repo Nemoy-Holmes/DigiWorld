@@ -16,7 +16,7 @@ describe Product do
     end
 
     it "returns the highest rating of all comments" do
-      expect(@product.highest_rating_comment).to eq (5)
+      expect(@product.highest_rating_comment.rating).to eq (5)
     end
 
   end
